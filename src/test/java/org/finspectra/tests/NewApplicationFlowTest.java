@@ -51,8 +51,6 @@ public class NewApplicationFlowTest extends BaseTest {
         addcolVal.addCollateralName();
         addcolVal.addCollateralSecurityRanking();
         addcolVal.addCollateralAddress();
-
-
         generatePricing.clickGPQuickAction();
         generatePricing.enterCreditLimitAmount(creditLimitAmount);
         generatePricing.changeRateTypeToFixed();
@@ -62,8 +60,6 @@ public class NewApplicationFlowTest extends BaseTest {
         generatePricing.removeFeeReserveItemization();
         generatePricing.removeInterestReserveItemization();
         newApp.scrollUp();
-
-
         generatePricing.clickCalculate();
         generatePricing.waitForSuccessMessage();
         generatePricing.clickGeneratePricingSaveButton();
