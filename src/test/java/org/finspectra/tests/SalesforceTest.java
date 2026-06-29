@@ -27,10 +27,7 @@ public class SalesforceTest extends BaseTest {
 
         NewApplicationFlow newApp = new NewApplicationFlow(driver);
         newApp.closePopups();
-
-
         newApp.clickNew();
-
         System.out.println("Final URL: " + driver.getCurrentUrl());
         System.out.println("Final Title: " + driver.getTitle());
     }
