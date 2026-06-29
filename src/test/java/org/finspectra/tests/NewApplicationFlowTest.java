@@ -62,6 +62,8 @@ public class NewApplicationFlowTest extends BaseTest {
         generatePricing.removeFeeReserveItemization();
         generatePricing.removeInterestReserveItemization();
         newApp.scrollUp();
+
+
         generatePricing.clickCalculate();
         generatePricing.waitForSuccessMessage();
         generatePricing.clickGeneratePricingSaveButton();
