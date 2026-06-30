@@ -5,7 +5,7 @@
         <classes>
             <class name="org.finspectra.tests.SalesforceTest"/>
             <class name="org.finspectra.tests.CreateAccountContactTest"/>
-            <class name="org.finspectra.tests.NewApplicationFlowTest"/>
+            <class name="org.finspectra.tests.ApplicationCreationTest"/>
         </classes>
     </test>
 </suite>

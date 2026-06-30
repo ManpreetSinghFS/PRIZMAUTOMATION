@@ -29,7 +29,7 @@ public class Locators {
     public static final By OUTLOOK_MESSAGE_BODY = By.cssSelector("div[aria-label='Message body']");
 
     // New Application Flow
-    public static final By NEXT_BUTTON = By.xpath ("//button[text()='Next']");
+    public static final By NEXT_BUTTON = By.xpath ("//button[contains(@class,'slds-button_brand') and normalize-space()='Next']");
     public static final By ACCOUNT_SEARCH_BUTTON = By.xpath ("//input[@aria-label='Account']");
     public static final By CONTACT_COMBOBOX = By.xpath("//button[@aria-label='Contacts' and @role='combobox']");
     public static final By DROPDOWN_FIRST_OPTION = By.xpath("(//*[@role='option'])[1]");
@@ -37,6 +37,7 @@ public class Locators {
     public static final By REQUESTED_LOAN_AMOUNT = By.xpath("//input[@name='Requested_Loan_Amount']");
     public static final By SAVE_BUTTON = By.xpath ("//button[text()='Save']");
     public static final By OPEN_NEWLY_CREATED_APPLICATION = By.xpath ("//button[text()='Go to Application']");
+    public static final By SELECT_PRODUCT = By.xpath ("//input[@type='radio'][@name='pickerOptions'][@value='ER']/following-sibling::label//span[@class='pickerWithDescription slds-visual-picker__figure slds-visual-picker__text slds-align_absolute-center']");
 
     // App Launcher
     public static final By APP_LAUNCHER_BUTTON  = By.xpath("//button[@title='App Launcher']");
@@ -72,7 +73,7 @@ public class Locators {
     public static final By SUCCESS_MESSAGE  = By.xpath("//div[@class='message confirmM3']");
     public static final By SUCCESS_CRITERIA  = By.xpath("//button[@title='Click to toggle the success criteria of the current stage.']");
 
-    //Add Collateral And Its Valuation
+    // Add Collateral And Its Valuation
     public static final By ADD_COLLATERAL_QUICKACTION  = By.xpath("//button[text()='Add Collateral']");
     public static final By ADD_COLLATERAL_SUBFAMILY  = By.xpath("//button[@aria-label = 'Collateral Sub Family']");
     public static final By ADD_COLLATERAL_NAME = By.xpath("//input[@name = 'Name']");
@@ -81,5 +82,37 @@ public class Locators {
     public static final By ADD_COLLATERAL_PROPERTY_TYPE = By.xpath("//button[@aria-label = 'Property Type']");
     public static final By ADD_COLLATERAL_LOCATION = By.xpath("//button[@aria-label = 'Property Type']");
     public static final By ADD_VALUATION_RADIOBUTTON = By.xpath("//input[@value='Add_Collateral_Valuation_Yes']/following-sibling::label//span[@class='slds-radio_faux']");
-    public static final By COLLATERAL_SUBFAMILY_DD = By.xpath("//span[@title='Single Family Home']");
+    public static final By ADD_COLLATERAL_VALUATION = By.xpath("//input[@name='Complete_Valuation']");
+    public static final By ADD_COLLATERAL_SUBFAMILY_DD = By.xpath("//lightning-base-combobox-item//span[text()='Single Family Home']");
+    public static final By ADD_COLLATERAL_SECURITY_RANKING_DD = By.xpath("//lightning-base-combobox-item//span[text()='First Mortgage']");
+    public static final By ADD_COLLATERAL_LOCATION_DD = By.xpath("//lightning-base-combobox-item//span[text()='Urban']");
+    public static final By SELECT_EXISTING = By.xpath("///span[text()='Choose from an existing collateral and link to application']/ancestor::label");
+    public static final By SELECT_NEW = By.xpath("//span[text()='Create a new collateral and link to application']/ancestor::label");
+    public static final By SELECT_COMPLETE_VALUE = By.xpath("//input[@name='Complete_Valuation']");
+
+
+    // Approval Process
+    public static final By APPROVAL_PROCESS_QUICKACTION = By.xpath("//button[normalize-space()=\"Submit for Approval\"]");
+    public static final By APPROVAL_PROCESS_COMMENT = By.xpath("//textarea[@cols='20' and @rows='10']");
+    public static final By APPROVAL_PROCESS_SUBMIT = By.xpath("//span[text()='Submit']");
+    public static final By APPROVAL_USER_SEARCH = By.xpath("//input[@title='Search Users']");
+    public static final By APPROVAL_USER_SELECT = By.xpath("//div[@title='Manpreet Singh']");
+    public static final By OPEN_APPROVAL = By.xpath("//a[@data-special-link='true' and contains(.,'Director')]");
+    public static final By CLICK_APPROVAL_PROCESS = By.xpath("//div[@title='Approve']");
+    public static final By CLICK_APPROVE = By.xpath("//span[text()='Approve']");
+    public static final By APPLICATION_NUMBER_LINK = By.xpath("//div[contains(@class,'outputLookupContainer')]//a[@data-refid='recordId']");
+
+    // verify Checklist
+    public static final By CLICK_CHECKLIST_TAB = By.xpath("//a[text()='Documents & Checklists']");
+    public static final By CLICK_VERIFY = By.xpath("(//span[@title='Click to mark the record as Verified.'])[1]");
+
+    // Override Validation Rule
+    public static final By OPEN_FAILED_VALIDATION_RULE = By.xpath("//a[text()='Required Documents Check']");
+    public static final By clickOverrideButton = By.xpath("//button[text()='Override']");
+    public static final By overrideReason = By.xpath("//textarea[@class=' textarea']");
+    public static final By saveOverride = By.xpath("(//span[text()='Save'])[2]");
+    public static final By closeRuleResult = By.xpath("//button[contains(@class,\"slds-button_icon-container\") and starts-with(@title,\"Close RR-\")]");
+    public static final By CLICK_EDIT_ICON = By.xpath("//span[text()='Edit Overridden']");
+    public static final By CHECK_CHECKBOX = By.xpath("//input[@name='fsCore__Is_Overridden__c']");
+
 }

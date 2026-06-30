@@ -36,11 +36,17 @@ public class NewApplicationFlow extends BasePage {
     public void clickNew() throws InterruptedException {
         WebElement newButton = wait.until(ExpectedConditions.elementToBeClickable(Locators.APP_NEW_BUTTON));
         newButton.click();
+        Thread.sleep(3000);
     }
 
     public void scrollDown(){
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0, 3000);");
+    }
+
+    public void selectProduct(){
+        WebElement selectProduct = wait.until(ExpectedConditions.elementToBeClickable(Locators.SELECT_PRODUCT));
+        selectProduct.click();
     }
 
     public void scrollUp(){
@@ -50,10 +56,11 @@ public class NewApplicationFlow extends BasePage {
     }
 
     public void clickNext() throws InterruptedException {
-        WebElement nextButton = wait.until(ExpectedConditions.presenceOfElementLocated(Locators.NEXT_BUTTON));
+        WebElement nextButton = wait.until(ExpectedConditions.elementToBeClickable(Locators.NEXT_BUTTON));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", nextButton);
         js.executeScript("arguments[0].click();", nextButton);
+        wait.until(ExpectedConditions.stalenessOf(nextButton));
         Thread.sleep(3000);
     }
 
@@ -109,11 +116,12 @@ public class NewApplicationFlow extends BasePage {
         System.out.println("Requested loan amount entered: " + loanAmount);
     }
 
-    public void clickSave(){
+    public void clickSave() throws InterruptedException {
         WebElement saveButton = wait.until(ExpectedConditions.presenceOfElementLocated(Locators.SAVE_BUTTON));
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView({block:'center'});", saveButton);
         js.executeScript("arguments[0].click();", saveButton);
+        Thread.sleep(3000);
     }
 
     public void openNewlyCreatedApplication(){

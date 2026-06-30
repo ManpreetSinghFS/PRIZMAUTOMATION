@@ -5,7 +5,7 @@ import org.finspectra.pages.*;
 import org.finspectra.utils.ConfigReader;
 import org.testng.annotations.Test;
 
-public class NewApplicationFlowTest extends BaseTest {
+public class ApplicationCreationTest extends BaseTest {
 
     @Test
     public void runNewApplicationFlow() throws Exception {
@@ -31,10 +31,14 @@ public class NewApplicationFlowTest extends BaseTest {
         StageValidationAndCompletion stageValAndApp = new StageValidationAndCompletion(driver);
         GeneratePricing generatePricing = new GeneratePricing(driver);
         AddCollateralAndValuation addcolVal = new AddCollateralAndValuation(driver);
+        Checklist checklist = new Checklist(driver);
+        ApprovalProcess appPro = new ApprovalProcess(driver);
+        OverrideValidationRule overrideRule = new OverrideValidationRule(driver);
 
-        newApp.closePopups();
+        //newApp.closePopups();
         newApp.clickNew();
         newApp.clickNext();
+        newApp.selectProduct();
         newApp.clickNext();
         newApp.addAccountDetails();
         newApp.addContact();
@@ -44,13 +48,26 @@ public class NewApplicationFlowTest extends BaseTest {
         newApp.addLoanInformation();
         newApp.clickSave();
         newApp.openNewlyCreatedApplication();
+
         addcolVal.clickAddCollateralQuickAction();
         newApp.clickNext();
+        //addcolVal.selectAnOptionCollateral();
         newApp.clickNext();
         addcolVal.addCollateralSubFamily();
         addcolVal.addCollateralName();
         addcolVal.addCollateralSecurityRanking();
-        addcolVal.addCollateralAddress();
+        //addcolVal.addCollateralAddress();
+        newApp.scrollDown();
+        //addcolVal.selectPropertyType();
+        //addcolVal.selectLocation();
+        newApp.clickSave();
+        addcolVal.selectValuationDetailsRadioButton();
+        newApp.clickNext();
+        addcolVal.addCollateralValuation();
+        addcolVal.addCollateralCompleteValuation();
+        newApp.clickSave();
+        newApp.openNewlyCreatedApplication();
+
         generatePricing.clickGPQuickAction();
         generatePricing.enterCreditLimitAmount(creditLimitAmount);
         generatePricing.changeRateTypeToFixed();
@@ -63,10 +80,47 @@ public class NewApplicationFlowTest extends BaseTest {
         generatePricing.clickCalculate();
         generatePricing.waitForSuccessMessage();
         generatePricing.clickGeneratePricingSaveButton();
+
         stageValAndApp.openSuccessCriteria();
         stageValAndApp.clickValidate();
         stageValAndApp.clickMarkStageAsCompleted();
         stageValAndApp.clickValidate();
+        stageValAndApp.clickMarkStageAsCompleted();
+
+        appPro.clickApprovalProcessQuickAction();
+        appPro.addComments();
+        appPro.clickSubmit();
+        appPro.selectApprovalUser();
+        appPro.clickSubmit();
+        appPro.openApprovalReceived();
+        appPro.clickApproveButton();
+        appPro.clickApproveAfterAddingComments();
+
+        stageValAndApp.clickValidate();
+        stageValAndApp.clickMarkStageAsCompleted();
+        stageValAndApp.clickValidate();
+        stageValAndApp.clickMarkStageAsCompleted();
+        stageValAndApp.clickValidate();
+
+        checklist.openChecklistTab();
+        newApp.scrollDown();
+        checklist.verifyCheckLists();
+        newApp.scrollUp();
+        stageValAndApp.clickValidate();
+
+        overrideRule.openFailedRule();
+        overrideRule.clickEditIcon();
+        overrideRule.checkOverRideCheckbox();
+        newApp.clickSave();
+        overrideRule.openApplicationID();
+        stageValAndApp.clickValidate();
+        stageValAndApp.clickMarkStageAsCompleted();
+
+
+
+
+
+
 
 
     }

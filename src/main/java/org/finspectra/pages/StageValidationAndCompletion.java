@@ -27,13 +27,15 @@ public class StageValidationAndCompletion extends BasePage {
                 ExpectedConditions.presenceOfElementLocated(Locators.STAGE_COMPLETE));
         js.executeScript("arguments[0].scrollIntoView({block: 'center'});", clickMarkStageAsCompleted);
         js.executeScript("arguments[0].click();", clickMarkStageAsCompleted);
-        Thread.sleep(3000);
+        Thread.sleep(4000);
 
     }
 
-    public void openSuccessCriteria(){
-        WebElement clickSuccessCriteriaIcon = wait.until(
-                ExpectedConditions.presenceOfElementLocated(Locators.SUCCESS_CRITERIA));
+    public void openSuccessCriteria() throws InterruptedException {
+        WebElement clickSuccessCriteriaIcon = wait.until(ExpectedConditions.presenceOfElementLocated(Locators.SUCCESS_CRITERIA));
+        js.executeScript("arguments[0].scrollIntoView({block: 'center'});", clickSuccessCriteriaIcon);
+        js.executeScript("arguments[0].click();", clickSuccessCriteriaIcon);
+        Thread.sleep(2000);
     }
 
 }

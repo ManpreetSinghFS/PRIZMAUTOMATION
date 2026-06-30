@@ -95,7 +95,7 @@ public class GeneratePricing extends BasePage {
                 ExpectedConditions.visibilityOfElementLocated(Locators.GP_SAVE_BUTTON));
         clickSave.click();
         switchToDefault();
-        Thread.sleep(3000);
+        Thread.sleep(5000);
     }
 
 }
