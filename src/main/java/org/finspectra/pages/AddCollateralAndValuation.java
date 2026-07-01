@@ -103,7 +103,7 @@ public class AddCollateralAndValuation extends BasePage {
         LatestValuation.clear();
         LatestValuation.sendKeys(valuation);
         LatestValuation.sendKeys(Keys.TAB);
-        Thread.sleep(3000);
+        Thread.sleep(4000);
     }
 
     public void addCollateralCompleteValuation (){

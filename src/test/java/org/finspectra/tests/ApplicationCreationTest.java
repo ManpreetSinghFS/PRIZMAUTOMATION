@@ -100,6 +100,7 @@ public class ApplicationCreationTest extends BaseTest {
         stageValAndApp.clickMarkStageAsCompleted();
         stageValAndApp.clickValidate();
         stageValAndApp.clickMarkStageAsCompleted();
+        stageValAndApp.openSuccessCriteria();
         stageValAndApp.clickValidate();
 
         checklist.openChecklistTab();
@@ -109,10 +110,14 @@ public class ApplicationCreationTest extends BaseTest {
         stageValAndApp.clickValidate();
 
         overrideRule.openFailedRule();
-        overrideRule.clickEditIcon();
-        overrideRule.checkOverRideCheckbox();
-        newApp.clickSave();
-        overrideRule.openApplicationID();
+        overrideRule.clickOverRide();
+        overrideRule.addOverrideComments();
+        overrideRule.clickSave();
+        overrideRule.closeTab();
+      //  overrideRule.clickEditIcon();
+      //  overrideRule.checkOverRideCheckbox();
+      //  newApp.clickSave();
+      //  overrideRule.openApplicationID();
         stageValAndApp.clickValidate();
         stageValAndApp.clickMarkStageAsCompleted();
 

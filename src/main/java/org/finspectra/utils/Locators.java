@@ -82,7 +82,7 @@ public class Locators {
     public static final By ADD_COLLATERAL_PROPERTY_TYPE = By.xpath("//button[@aria-label = 'Property Type']");
     public static final By ADD_COLLATERAL_LOCATION = By.xpath("//button[@aria-label = 'Property Type']");
     public static final By ADD_VALUATION_RADIOBUTTON = By.xpath("//input[@value='Add_Collateral_Valuation_Yes']/following-sibling::label//span[@class='slds-radio_faux']");
-    public static final By ADD_COLLATERAL_VALUATION = By.xpath("//input[@name='Complete_Valuation']");
+    public static final By ADD_COLLATERAL_VALUATION = By.xpath("//input[@name='Current_Valuation']");
     public static final By ADD_COLLATERAL_SUBFAMILY_DD = By.xpath("//lightning-base-combobox-item//span[text()='Single Family Home']");
     public static final By ADD_COLLATERAL_SECURITY_RANKING_DD = By.xpath("//lightning-base-combobox-item//span[text()='First Mortgage']");
     public static final By ADD_COLLATERAL_LOCATION_DD = By.xpath("//lightning-base-combobox-item//span[text()='Urban']");
@@ -108,11 +108,11 @@ public class Locators {
 
     // Override Validation Rule
     public static final By OPEN_FAILED_VALIDATION_RULE = By.xpath("//a[text()='Required Documents Check']");
-    public static final By clickOverrideButton = By.xpath("//button[text()='Override']");
-    public static final By overrideReason = By.xpath("//textarea[@class=' textarea']");
-    public static final By saveOverride = By.xpath("(//span[text()='Save'])[2]");
-    public static final By closeRuleResult = By.xpath("//button[contains(@class,\"slds-button_icon-container\") and starts-with(@title,\"Close RR-\")]");
-    public static final By CLICK_EDIT_ICON = By.xpath("//span[text()='Edit Overridden']");
+    public static final By CLICK_OVERRIDE_ICON = By.xpath("//button[text()='Override']");
+    public static final By OVERRIDE_REASON = By.xpath("//textarea[@class=' textarea']");
+    public static final By SAVE_OVERRIDE = By.xpath("(//span[text()='Save'])[2]");
+    public static final By CLOSE_RULE = By.xpath("//button[contains(@class,\"slds-button_icon-container\") and starts-with(@title,\"Close RR-\")]");
+    public static final By CLICK_EDIT_ICON = By.xpath("//button[@title='Edit Overridden']");
     public static final By CHECK_CHECKBOX = By.xpath("//input[@name='fsCore__Is_Overridden__c']");
 
 }

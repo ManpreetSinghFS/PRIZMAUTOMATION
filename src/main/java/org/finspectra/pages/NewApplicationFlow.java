@@ -36,7 +36,7 @@ public class NewApplicationFlow extends BasePage {
     public void clickNew() throws InterruptedException {
         WebElement newButton = wait.until(ExpectedConditions.elementToBeClickable(Locators.APP_NEW_BUTTON));
         newButton.click();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
     }
 
     public void scrollDown(){
